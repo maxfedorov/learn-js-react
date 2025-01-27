@@ -1,13 +1,11 @@
 import Counter from "../counter/Counter.jsx";
 
-const Dish = ({ item }) => {
+const Dish = ({ title }) => {
   return (
-    <div>
-      <li>
-        {item.name}
-        <Counter />
-      </li>
-    </div>
+    <>
+      {title}
+      <Counter />
+    </>
   );
 };
 

@@ -8,7 +8,11 @@ const Menu = ({ menu }) => {
         {menu.length === 0 ? (
           <span>Menu is empty</span>
         ) : (
-          menu.map((item) => <Dish key={item.id} item={item} />)
+          menu.map(({ id, name }) => (
+            <li key={id}>
+              <Dish title={name} />
+            </li>
+          ))
         )}
       </ul>
     </>
