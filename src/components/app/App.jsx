@@ -1,5 +1,5 @@
-import Restaurants from "../restaurants/Restaurants.jsx";
-import Layout from "../layout/Layout.jsx";
+import Restaurants from "../restaurants/restaurants.jsx";
+import Layout from "../layout/layout.jsx";
 
 const App = () => {
   return (

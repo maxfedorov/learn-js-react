@@ -1,7 +1,7 @@
 import { restaurants } from "../../constants/mock.js";
-import Restaurant from "../restaurant/Restaurant.jsx";
+import Restaurant from "../restaurant/restaurant.jsx";
 import { useState } from "react";
-import Tab from "../tab/Tab.jsx";
+import Tab from "../tab/tab.jsx";
 
 const Restaurants = () => {
   const [activeRestaurantId, setActiveRestaurantId] = useState(

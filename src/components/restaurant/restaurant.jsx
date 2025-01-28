@@ -1,5 +1,5 @@
-import Menu from "../menu/Menu.jsx";
-import Reviews from "../reviews/Reviews.jsx";
+import Menu from "../menu/menu.jsx";
+import Reviews from "../reviews/reviews.jsx";
 
 const Restaurant = ({ name, menu, reviews }) => {
   return (

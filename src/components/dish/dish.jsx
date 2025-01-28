@@ -1,4 +1,4 @@
-import Counter from "../counter/Counter.jsx";
+import Counter from "../counter/counter.jsx";
 
 const Dish = ({ title }) => {
   return (
