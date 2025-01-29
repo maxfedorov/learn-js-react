@@ -1,14 +1,9 @@
-import { useState } from "react";
-
-const Counter = () => {
-  const [count, setCount] = useState(0);
-  const onPlus = () => setCount(count + 1);
-  const onMinus = () => setCount(count - 1);
+const Counter = ({ value = 0, onDecrement, onIncrement }) => {
   return (
     <div>
-      {count > 0 && <button onClick={onMinus}>-</button>}
-      {count}
-      {count < 5 && <button onClick={onPlus}>+</button>}
+      <button onClick={onDecrement}>-</button>
+      {value}
+      <button onClick={onIncrement}>+</button>
     </div>
   );
 };
