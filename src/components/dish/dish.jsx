@@ -1,10 +1,10 @@
-import Counter from "../counter/counter.jsx";
+import DishCounter from "../dish-counter/dish-counter.jsx";
 
 const Dish = ({ title }) => {
   return (
     <>
       {title}
-      <Counter />
+      <DishCounter />
     </>
   );
 };
