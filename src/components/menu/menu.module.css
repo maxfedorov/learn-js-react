@@ -1,0 +1,12 @@
+.menu {
+    padding-left: 20px;
+}
+
+.menuItems {
+    border: 1px lightgrey dashed;
+    border-radius: 5px;
+}
+
+.menuItem {
+    list-style: none;
+}

@@ -1,9 +1,14 @@
+import ProgressBar from "../progress-bar/progress-bar.jsx";
+import Header from "../header/header.jsx";
+import Footer from "../footer/footer.jsx";
+
 const Layout = ({ children }) => {
   return (
     <div>
-      <header>header</header>
+      <ProgressBar />
+      <Header>Restaurants</Header>
       {children}
-      <footer>footer</footer>
+      <Footer>footer</Footer>
     </div>
   );
 };
