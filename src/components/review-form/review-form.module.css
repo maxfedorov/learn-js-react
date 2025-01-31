@@ -1,0 +1,36 @@
+.form {
+    background-color: darkseagreen;
+    padding: 20px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px;
+    width: 50%;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+}
+
+.clear {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: whitesmoke;
+    border: darkgrey;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.clear:hover {
+    background-color: darkgrey;
+}

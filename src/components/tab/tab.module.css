@@ -1,0 +1,17 @@
+.tab {
+    background-color: wheat;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tab:hover {
+    background-color: antiquewhite;
+}
+
+.active {
+    border-bottom: 1px solid black;
+}
