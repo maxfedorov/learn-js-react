@@ -2,10 +2,22 @@
     background-color: grey;
     padding: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
     color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    margin: 0 auto;
+}
+
+.toggle {
+    margin-left: 0;
+}
+
+.login {
+    margin-left: 0;
 }
