@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
+const getNewProgress = () => {
+  return (
+    Math.floor(
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+        100,
+    ) + "%"
+  );
+};
+
 export const useProgress = () => {
   const [progress, setProgress] = useState("0%");
-
-  const getNewProgress = () => {
-    return (
-      Math.floor(
-        (window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)) *
-          100,
-      ) + "%"
-    );
-  };
 
   useEffect(() => {
     const handleScroll = () => {
