@@ -1,6 +1,7 @@
 import { useForm } from "./use-form.js";
 import Counter from "../counter/counter.jsx";
 import styles from "./review-form.module.css";
+import Button from "../button/button.jsx";
 
 const ReviewForm = () => {
   const { form, setName, setText, clear, increment, decrement } = useForm();
@@ -35,9 +36,9 @@ const ReviewForm = () => {
             onIncrement={increment}
           />
         </div>
-        <button onClick={clear} className={styles.clear}>
+        <Button onClick={clear} className={styles.clear} size={"L"}>
           Clear
-        </button>
+        </Button>
       </form>
     </div>
   );
