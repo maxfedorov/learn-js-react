@@ -1,17 +1,17 @@
-import Dish from "../dish/dish.jsx";
 import styles from "./menu.module.css";
+import DishContainer from "../dish/dish-container.jsx";
 
-const Menu = ({ menu }) => {
+const Menu = ({ dishesIds }) => {
   return (
     <div className={styles.menu}>
       <h3>Menu</h3>
       <ul className={styles.menuItems}>
-        {menu.length === 0 ? (
+        {dishesIds.length === 0 ? (
           <span>Menu is empty</span>
         ) : (
-          menu.map(({ id, name }) => (
+          dishesIds.map((id) => (
             <li key={id} className={styles.menuItem}>
-              <Dish title={name} />
+              <DishContainer dishId={id} />
             </li>
           ))
         )}

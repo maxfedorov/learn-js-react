@@ -1,14 +1,19 @@
 import styles from "./tab.module.css";
 import classNames from "classnames";
+import { useSelector } from "react-redux";
+import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js";
 
-const Tab = ({ title, isActive, onClick }) => {
+const Tab = ({ restaurantId, isActive, onClick }) => {
+  const { name } = useSelector((state) =>
+    selectRestaurantById(state, restaurantId),
+  );
   return (
     <button
       onClick={onClick}
       disabled={isActive}
       className={classNames(styles.tab, isActive && styles.active)}
     >
-      {title}
+      {name}
     </button>
   );
 };
