@@ -1,9 +1,9 @@
-import styles from "./tab.module.css";
+import styles from "./restaurant-tab.module.css";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js";
 
-const Tab = ({ restaurantId, isActive, onClick }) => {
+const RestaurantTab = ({ restaurantId, isActive, onClick }) => {
   const { name } = useSelector((state) =>
     selectRestaurantById(state, restaurantId),
   );
@@ -18,4 +18,4 @@ const Tab = ({ restaurantId, isActive, onClick }) => {
   );
 };
 
-export default Tab;
+export default RestaurantTab;
