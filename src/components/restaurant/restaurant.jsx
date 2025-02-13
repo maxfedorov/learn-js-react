@@ -5,14 +5,14 @@ import ReviewForm from "../review-form/review-form.jsx";
 import { AuthContext } from "../auth-context/index.js";
 import { use } from "react";
 
-const Restaurant = ({ name, menu, reviews }) => {
+const Restaurant = ({ name, dishesIds, reviewsIds }) => {
   const { auth } = use(AuthContext);
 
   return (
     <div className={styles.restaurant}>
       <h2 className={styles.heading}>{name}</h2>
-      <Menu menu={menu} />
-      <Reviews reviews={reviews} />
+      <Menu dishesIds={dishesIds} />
+      <Reviews reviewsIds={reviewsIds} />
       {auth.userName && <ReviewForm />}
     </div>
   );
