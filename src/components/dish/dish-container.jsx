@@ -7,7 +7,7 @@ const DishContainer = ({ dishId }) => {
 
   const { name } = dish || {};
 
-  return <Dish title={name} />;
+  return <Dish title={name} dishId={dishId} />;
 };
 
 export default DishContainer;
