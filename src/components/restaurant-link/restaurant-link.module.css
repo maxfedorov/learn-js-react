@@ -1,0 +1,13 @@
+.link {
+    padding: 10px;
+    margin: 5px;
+    background-color: #c1ece5;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: #a1d9ce;
+}
