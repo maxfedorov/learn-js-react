@@ -10,6 +10,7 @@ import Layout from "../layout/layout.jsx";
 import { RestaurantPage } from "../../pages/restaurant-page.jsx";
 import Menu from "../menu/menu.jsx";
 import Reviews from "../reviews/reviews.jsx";
+import { DishPage } from "../../pages/dish-page.jsx";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
                     <Route path="reviews" element={<Reviews />} />
                   </Route>
                 </Route>
+                <Route path="/dish/:dishId" element={<DishPage />} />
               </Route>
             </Routes>
           </ThemeContextProvider>
