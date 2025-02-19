@@ -4,21 +4,18 @@ import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js";
 import { NavLink } from "react-router";
 
-const RestaurantTab = ({ restaurantId, onClick }) => {
+const RestaurantTab = ({ restaurantId }) => {
   const { name } = useSelector((state) =>
     selectRestaurantById(state, restaurantId),
   );
   return (
-    <NavLink to={`/restaurants/${restaurantId}`}>
-      {({ isActive }) => (
-        <button
-          onClick={onClick}
-          disabled={isActive}
-          className={classNames(styles.tab, isActive && styles.active)}
-        >
-          {name}
-        </button>
-      )}
+    <NavLink
+      to={`/restaurants/${restaurantId}`}
+      className={({ isActive }) =>
+        classNames(styles.tab, isActive && styles.active)
+      }
+    >
+      {name}
     </NavLink>
   );
 };
