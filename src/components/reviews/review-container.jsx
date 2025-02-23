@@ -12,12 +12,13 @@ const ReviewContainer = ({ reviewId }) => {
   const { userId, text, rating } = review || {};
 
   const user = useSelector((state) => selectUserById(state, userId));
+
   const { auth } = use(AuthContext);
 
   return (
     <>
       <div className={styles.review}>
-        <span style={{ fontWeight: "bold" }}>{user.name}</span>
+        <span style={{ fontWeight: "bold" }}>{user?.name || "Loading..."}</span>
         <p>{text}</p>
         <span>rating: {rating}</span>
       </div>
