@@ -3,9 +3,9 @@ import Counter from "../counter/counter.jsx";
 import styles from "./review-form.module.css";
 import Button from "../button/button.jsx";
 
-const ReviewForm = () => {
+const ReviewForm = ({ onSubmit, disableSubmit }) => {
   const { form, setName, setText, clear, increment, decrement } = useForm();
-
+  const { text, rating } = form;
   return (
     <div className={styles.form}>
       <h3>Review Form</h3>
@@ -29,15 +29,23 @@ const ReviewForm = () => {
           />
         </div>
         <div className={styles.counter}>
-          <span>Count</span>
+          <span>Rating</span>
           <Counter
             value={form.rating}
             onDecrement={decrement}
             onIncrement={increment}
           />
         </div>
-        <Button onClick={clear} className={styles.clear} size={"L"}>
+        <Button onClick={clear} className={styles.button} size={"L"}>
           Clear
+        </Button>
+        <Button
+          onClick={() => onSubmit({ text, rating })}
+          className={styles.button}
+          size={"L"}
+          disabled={disableSubmit}
+        >
+          Submit
         </Button>
       </form>
     </div>
