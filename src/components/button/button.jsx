@@ -3,7 +3,7 @@ import { ThemeContext } from "../theme-context/index.js";
 import styles from "./button.module.css";
 import classNames from "classnames";
 
-const Button = ({ children, onClick, size = "M" }) => {
+const Button = ({ children, onClick, size = "M", disabled }) => {
   const { theme } = use(ThemeContext);
 
   return (
@@ -14,6 +14,7 @@ const Button = ({ children, onClick, size = "M" }) => {
         theme === "light" ? styles.light : styles.dark,
         size === "M" ? styles.sizeM : styles.sizeL,
       )}
+      disabled={disabled}
     >
       {children}
     </button>

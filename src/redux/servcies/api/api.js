@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const apiSlice = createApi({
   reducerPath: "api",
+  tagTypes: ["reviews"],
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3001/api",
   }),
@@ -14,6 +15,7 @@ export const apiSlice = createApi({
     }),
     getRestaurantReviewsById: builder.query({
       query: (restaurantId) => `/reviews?restaurantId=${restaurantId}`,
+      providesTags: [{ type: "reviews", id: "ALL" }],
     }),
     getDishById: builder.query({
       query: (dishId) => `/dish/${dishId}`,
@@ -22,11 +24,12 @@ export const apiSlice = createApi({
       query: (restaurantId) => `/dishes?restaurantId=${restaurantId}`,
     }),
     addReview: builder.mutation({
-      query: (restaurantId, review) => ({
-        url: `/reviews/${restaurantId}`,
+      query: ({ restaurantId, review }) => ({
+        url: `/review/${restaurantId}`,
         body: review,
         method: "POST",
       }),
+      invalidatesTags: [{ type: "reviews", id: "ALL" }],
     }),
   }),
 });

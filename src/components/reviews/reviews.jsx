@@ -15,10 +15,10 @@ const Reviews = () => {
   const usersRequestStatus = useRequest(getUsers, restaurantId);
   const {
     data: reviwesData,
-    isLoading: reviewsIsLoading,
+    isFetching: reviewsisFetching,
     isError: reviewsIsError,
   } = useGetRestaurantReviewsByIdQuery(restaurantId);
-  if (reviewsIsLoading || usersRequestStatus === REQUEST_STATUS_PENDING) {
+  if (reviewsisFetching || usersRequestStatus === REQUEST_STATUS_PENDING) {
     return "loading...";
   }
 

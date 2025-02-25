@@ -7,7 +7,11 @@ export const AuthContextProvider = ({ children }) => {
     setAuth((prevState) => {
       return prevState.userName
         ? { ...prevState, userName: "" }
-        : { ...prevState, userName: "John" };
+        : {
+            ...prevState,
+            userName: "Antony",
+            userId: "a304959a-76c0-4b34-954a-b38dbf310360",
+          };
     });
   };
   return <AuthContext value={{ auth, login }}>{children}</AuthContext>;

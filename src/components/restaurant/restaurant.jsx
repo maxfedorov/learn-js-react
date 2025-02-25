@@ -5,7 +5,7 @@ import ReviewForm from "../review-form/review-form.jsx";
 import { use } from "react";
 import { AuthContext } from "../auth-context/index.js";
 
-const Restaurant = ({ name }) => {
+const Restaurant = ({ name, addReview, addReviewLoading }) => {
   const { auth } = use(AuthContext);
 
   return (
@@ -14,7 +14,9 @@ const Restaurant = ({ name }) => {
       <RestaurantLink to={`menu`}>Menu</RestaurantLink>
       <RestaurantLink to={`reviews`}>Reviews</RestaurantLink>
       <Outlet />
-      {auth.userName && <ReviewForm />}
+      {auth.userName && (
+        <ReviewForm onSubmit={addReview} disableSubmit={addReviewLoading} />
+      )}
     </div>
   );
 };
