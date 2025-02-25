@@ -1,11 +1,26 @@
-import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/entities/restaurants/slice.js";
 import Restaurant from "./restaurant.jsx";
+import { useGetRestaurantsQuery } from "../../redux/servcies/api/api.js";
 
-const RestaurantContainer = ({ id }) => {
-  const restaurant = useSelector((state) => selectRestaurantById(state, id));
+const RestaurantContainer = ({ restaurantId }) => {
+  const { data, isFetching, isError } = useGetRestaurantsQuery(undefined, {
+    selectFromResult: (result) => ({
+      ...result,
+      data: result.data?.find(({ id }) => id === restaurantId),
+    }),
+  });
 
-  const { name, menu, reviews } = restaurant || {};
+  if (isFetching) {
+    return "loading...";
+  }
+
+  if (isError) {
+    return "error";
+  }
+
+  if (!data) {
+    return null;
+  }
+  const { name, menu, reviews } = data || {};
 
   return <Restaurant name={name} dishesIds={menu} reviewsIds={reviews} />;
 };
